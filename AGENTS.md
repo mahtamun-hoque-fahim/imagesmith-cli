@@ -84,3 +84,9 @@ chore: bump to v0.2.0
   - --dry-run, --no-recursive, --quality (validated 1–100)
   - Exit codes: 0 success, 1 error, 2 no files found
   - All 6 scenarios tested and passing
+- Phase 3 polish complete:
+  - convert --help examples block added
+  - LICENSE (MIT) added
+  - README expanded with full usage, options table, supported formats
+  - npm pack --dry-run: 6 files, 5.4 KB, no src/docs/config leaked
+  - tsc --noEmit: zero errors

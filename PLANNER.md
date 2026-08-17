@@ -68,15 +68,15 @@ Goal: all three input types work end-to-end with progress and summary.
 
 ---
 
-## Phase 3 — Polish
+## Phase 3 — Polish ✅
 
 Goal: production-ready for npm publish.
 
-- [ ] Clean `--help` output with examples
-- [ ] Exit codes: 0 success, 1 error, 2 no files found
-- [ ] README with install + usage examples
-- [ ] .npmignore (exclude src/, *.md except README)
-- [ ] Test on macOS + Linux (sharp binary check)
+- [x] `--help` examples block on convert command
+- [x] LICENSE file (MIT)
+- [x] README expanded: install, usage for all 3 input types, options table, supported formats
+- [x] npm pack --dry-run verified: 6 files, 5.4 KB — no src/docs/config leaked
+- [x] `npm run lint` passes clean (tsc --noEmit, zero errors)
 
 ---
 

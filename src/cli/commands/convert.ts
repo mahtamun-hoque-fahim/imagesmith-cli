@@ -57,6 +57,17 @@ export function registerConvertCommand(program: Command): void {
     .option("-q, --quality <number>", "WebP quality 1-100", "80")
     .option("--no-recursive", "do not recurse into subdirectories")
     .option("--dry-run", "preview what would be converted without writing files")
+    .addHelpText(
+      "after",
+      `
+Examples:
+  $ imagesmith convert photo.png
+  $ imagesmith convert ./assets
+  $ imagesmith convert assets.zip
+  $ imagesmith convert ./assets ./out --quality 90
+  $ imagesmith convert ./assets --no-recursive
+  $ imagesmith convert ./assets --dry-run`
+    )
     .action(
       async (input: string, output: string | undefined, opts: ConvertOptions) => {
         const quality = parseInt(opts.quality, 10);
