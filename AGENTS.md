@@ -78,3 +78,9 @@ chore: bump to v0.2.0
   - `walkDirectory` — Node 20 native recursive readdir, image filter, relative paths
   - `processZip` — adm-zip unpack → convert → repack, folder structure preserved
   - All three verified with live test: 688B PNG → 162B WebP (76% reduction)
+- Phase 2 CLI commands complete:
+  - Full convert command: file / directory / ZIP input types, all routed correctly
+  - ora spinner with live count, chalk summary with bytes saved + duration
+  - --dry-run, --no-recursive, --quality (validated 1–100)
+  - Exit codes: 0 success, 1 error, 2 no files found
+  - All 6 scenarios tested and passing

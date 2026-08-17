@@ -50,20 +50,21 @@ Goal: `imagesmith convert image.png` actually works.
 
 ---
 
-## Phase 2 — CLI Commands (wire Phase 1 into commander)
+## Phase 2 — CLI Commands ✅
 
 Goal: all three input types work end-to-end with progress and summary.
 
 **convert command**
-- [ ] Detect input type: file | directory | ZIP (by stat + extension)
-- [ ] Route to correct core function
-- [ ] ora spinner during conversion ("Converting 47 files...")
-- [ ] chalk summary on finish:
-      `✓ 47 files converted · 14.2 MB saved · 3.2s`
-- [ ] --dry-run: list files that would convert, show estimated count, exit 0
-- [ ] --quality: parse + validate 1–100, default 80
-- [ ] --no-recursive: pass to walker
-- [ ] Handle errors gracefully (bad format, permission denied, empty dir)
+- [x] Detect input type: file | directory | ZIP (by stat + extension)
+- [x] Route to correct core function
+- [x] ora spinner during conversion
+- [x] chalk summary: `3 files converted · saved 2.1 KB · 31ms`
+- [x] --dry-run: list files that would convert, show count, exit 0
+- [x] --quality: parse + validate 1–100, default 80
+- [x] --no-recursive: pass to walker
+- [x] Error handling: bad format, bad path, permission denied
+- [x] Exit codes: 0 success, 1 error, 2 no files found
+- [x] listZipImages helper added to zip.ts for dry-run ZIP inspection
 
 ---
 

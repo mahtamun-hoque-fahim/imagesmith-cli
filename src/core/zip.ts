@@ -11,6 +11,19 @@ export interface ZipConvertResult {
   savedBytes: number;
 }
 
+/** List all image entry names inside a ZIP — used for --dry-run. */
+export function listZipImages(inputZipPath: string): string[] {
+  const zip = new AdmZip(inputZipPath);
+  return zip
+    .getEntries()
+    .filter(
+      (e) =>
+        !e.isDirectory &&
+        SUPPORTED_FORMATS.includes(extname(e.entryName).toLowerCase())
+    )
+    .map((e) => e.entryName);
+}
+
 export async function processZip(
   inputZipPath: string,
   outputZipPath: string,
