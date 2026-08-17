@@ -1,0 +1,58 @@
+{
+  "name": "imagesmith",
+  "version": "0.1.0",
+  "description": "Convert any image or folder to WebP — in your terminal or agent workflow. Free, private, no uploads.",
+  "type": "module",
+  "bin": {
+    "imagesmith": "./dist/bin/imagesmith.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup && chmod +x dist/bin/imagesmith.js",
+    "dev": "tsup --watch",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "webp",
+    "image",
+    "converter",
+    "cli",
+    "mcp",
+    "batch",
+    "imagesmith"
+  ],
+  "author": "Mahtamun Hoque Fahim",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahtamun-hoque-fahim/imagesmith-cli.git"
+  },
+  "homepage": "https://github.com/mahtamun-hoque-fahim/imagesmith-cli#readme",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "ora": "^8.0.1",
+    "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.5",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.0"
+  }
+}
