@@ -23,27 +23,30 @@ Goal: `imagesmith --version` and `imagesmith --help` work. Full structure in pla
 
 ---
 
-## Phase 1 — Core Engine
+## Phase 1 — Core Engine ✅
 
 Goal: `imagesmith convert image.png` actually works.
 
 **convert.ts**
-- [ ] Import sharp
-- [ ] Implement convertToWebP(inputPath, outputPath, options)
-- [ ] Validate input format against SUPPORTED_FORMATS
-- [ ] Return inputBytes + outputBytes for savings summary
+- [x] Import sharp
+- [x] Implement convertToWebP(inputPath, outputPath, options)
+- [x] mkdir output dir recursively before writing (handles nested structures)
+- [x] Return inputBytes + outputBytes for savings summary
 
 **walker.ts**
-- [ ] fs.readdir with recursive flag (Node 18.17+ native recursive option)
-- [ ] Filter by SUPPORTED_FORMATS extension
-- [ ] Return absolutePath + relativePath + sizeBytes per file
+- [x] fs.readdir with recursive flag (Node 20 native)
+- [x] Filter by SUPPORTED_FORMATS extension
+- [x] Return absolutePath + relativePath + sizeBytes per file
+- [x] Non-image files (txt, etc.) skipped correctly
 
 **zip.ts**
-- [ ] adm-zip: read ZIP entries
-- [ ] Extract each image entry to tmp dir (os.tmpdir())
-- [ ] convertToWebP per entry
-- [ ] adm-zip: repack with .webp extensions, same folder structure
-- [ ] Clean up tmp dir
+- [x] adm-zip: read ZIP entries
+- [x] Extract each image entry to tmp dir (os.tmpdir())
+- [x] convertToWebP per entry
+- [x] adm-zip: repack with .webp extensions, same folder structure preserved
+- [x] Non-image files pass through unchanged
+- [x] Failed entries carry original through (ZIP never broken)
+- [x] Clean up tmp dir in finally block
 
 ---
 

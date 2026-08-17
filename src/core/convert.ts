@@ -1,5 +1,6 @@
-// Phase 1: sharp-based WebP conversion
-// import sharp from "sharp";
+import sharp from "sharp";
+import { stat, mkdir } from "fs/promises";
+import { dirname } from "path";
 
 export interface ConvertOptions {
   quality: number;
@@ -24,10 +25,25 @@ export const SUPPORTED_FORMATS = [
 ];
 
 export async function convertToWebP(
-  _inputPath: string,
-  _outputPath: string,
-  _options: ConvertOptions
+  inputPath: string,
+  outputPath: string,
+  options: ConvertOptions
 ): Promise<ConvertResult> {
-  // TODO: Phase 1 — replace with sharp conversion
-  throw new Error("convertToWebP not yet implemented");
+  const inputStats = await stat(inputPath);
+
+  // Ensure output directory exists (handles nested folder structures)
+  await mkdir(dirname(outputPath), { recursive: true });
+
+  await sharp(inputPath)
+    .webp({ quality: options.quality })
+    .toFile(outputPath);
+
+  const outputStats = await stat(outputPath);
+
+  return {
+    inputPath,
+    outputPath,
+    inputBytes: inputStats.size,
+    outputBytes: outputStats.size,
+  };
 }

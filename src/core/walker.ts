@@ -1,4 +1,6 @@
-// Phase 1: recursive directory walker with image filtering
+import { readdir, stat } from "fs/promises";
+import { join, extname, relative } from "path";
+import { SUPPORTED_FORMATS } from "./convert.js";
 
 export interface WalkResult {
   absolutePath: string;
@@ -7,9 +9,33 @@ export interface WalkResult {
 }
 
 export async function walkDirectory(
-  _dir: string,
-  _recursive: boolean = true
+  dir: string,
+  recursive: boolean = true
 ): Promise<WalkResult[]> {
-  // TODO: Phase 1 — fs.readdir recursive walk, filter by SUPPORTED_FORMATS
-  throw new Error("walkDirectory not yet implemented");
+  const entries = await readdir(dir, {
+    recursive,
+    withFileTypes: true,
+  });
+
+  const results: WalkResult[] = [];
+
+  for (const entry of entries) {
+    if (!entry.isFile()) continue;
+
+    const ext = extname(entry.name).toLowerCase();
+    if (!SUPPORTED_FORMATS.includes(ext)) continue;
+
+    // entry.path = directory containing the file (Node 20+)
+    const absolutePath = join(entry.path, entry.name);
+    const relativePath = relative(dir, absolutePath);
+    const fileStats = await stat(absolutePath);
+
+    results.push({
+      absolutePath,
+      relativePath,
+      sizeBytes: fileStats.size,
+    });
+  }
+
+  return results;
 }

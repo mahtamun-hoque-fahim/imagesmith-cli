@@ -73,3 +73,8 @@ chore: bump to v0.2.0
   - All source stubs created
   - BRAIN.md, PLANNER.md, AGENTS.md, README.md written
   - Build passes, `--version` and `--help` verified
+- Phase 1 core engine complete:
+  - `convertToWebP` — sharp WebP conversion, mkdir recursive, bytes delta
+  - `walkDirectory` — Node 20 native recursive readdir, image filter, relative paths
+  - `processZip` — adm-zip unpack → convert → repack, folder structure preserved
+  - All three verified with live test: 688B PNG → 162B WebP (76% reduction)
