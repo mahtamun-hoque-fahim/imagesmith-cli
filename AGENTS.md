@@ -90,3 +90,7 @@ chore: bump to v0.2.0
   - README expanded with full usage, options table, supported formats
   - npm pack --dry-run: 6 files, 5.4 KB, no src/docs/config leaked
   - tsc --noEmit: zero errors
+- Phase 4 shipped:
+  - Package name updated to @imagesmith/cli (scoped under @imagesmith npm org)
+  - Published @imagesmith/cli@0.1.0 to npm with --access public
+  - npm pkg fix applied (bin key, repository URL)

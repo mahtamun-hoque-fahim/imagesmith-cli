@@ -80,10 +80,11 @@ Goal: production-ready for npm publish.
 
 ---
 
-## Phase 4 — Ship
+## Phase 4 — Ship ✅
 
-- [ ] npm publish (package name: imagesmith)
-- [ ] gh-meta: cut v0.2.0 release, fill About, tag
+- [x] npm publish — `@imagesmith/cli@0.1.0` live at https://www.npmjs.com/package/@imagesmith/cli
+- [x] package.json auto-corrected (bin key, repository URL normalized)
+- [ ] gh-meta: cut v0.1.0 GitHub release, fill About, add topics
 
 ---
 

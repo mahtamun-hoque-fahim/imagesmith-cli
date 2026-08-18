@@ -17,7 +17,7 @@ All conversion happens on your machine. No accounts. No servers. No limits.
 ## Install
 
 ```bash
-npm install -g imagesmith
+npm install -g @imagesmith/cli
 ```
 
 ---

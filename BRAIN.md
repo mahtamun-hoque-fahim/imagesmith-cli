@@ -33,7 +33,7 @@ V2 and V3 share `src/core/` — same sharp engine, two interfaces. One npm packa
 
 ## Locked Decisions
 
-- [LOCKED] npm package name: `imagesmith`
+- [LOCKED] npm package name: `@imagesmith/cli` (scoped under @imagesmith org)
 - [LOCKED] Conversion engine: `sharp` (not libwebp WASM — that's the browser's constraint)
 - [LOCKED] CLI framework: `commander`
 - [LOCKED] Build tool: `tsup` (ESM output, Node 20+)
@@ -94,7 +94,7 @@ Output: auto-detected from input type
 |             | Web App (imageSmith) | CLI (imagesmith-cli) |
 |-------------|----------------------|----------------------|
 | Repo        | imageSmith           | imagesmith-cli       |
-| npm         | —                    | imagesmith           |
+| npm         | —                    | @imagesmith/cli      |
 | Engine      | libwebp WASM         | sharp                |
 | Runtime     | Browser              | Node 20+             |
 | Version     | V1 (shipped v0.2.0)  | V2 (in progress)     |

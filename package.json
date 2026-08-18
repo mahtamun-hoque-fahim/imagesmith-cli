@@ -1,10 +1,10 @@
 {
-  "name": "imagesmith",
+  "name": "@imagesmith/cli",
   "version": "0.1.0",
   "description": "Convert any image or folder to WebP — in your terminal or agent workflow. Free, private, no uploads.",
   "type": "module",
   "bin": {
-    "imagesmith": "./dist/bin/imagesmith.js"
+    "imagesmith": "dist/bin/imagesmith.js"
   },
   "exports": {
     ".": {
@@ -39,7 +39,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mahtamun-hoque-fahim/imagesmith-cli.git"
+    "url": "git+https://github.com/mahtamun-hoque-fahim/imagesmith-cli.git"
   },
   "homepage": "https://github.com/mahtamun-hoque-fahim/imagesmith-cli#readme",
   "dependencies": {
