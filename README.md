@@ -5,8 +5,8 @@
 The CLI companion to [ImageSmith](https://imagesmith.vercel.app).
 All conversion happens on your machine. No accounts. No servers. No limits.
 
-[![npm version](https://img.shields.io/npm/v/imagesmith)](https://www.npmjs.com/package/imagesmith)
-[![license](https://img.shields.io/npm/l/imagesmith)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/@imagesmith/cli)](https://www.npmjs.com/package/@imagesmith/cli)
+[![license](https://img.shields.io/npm/l/@imagesmith/cli)](./LICENSE)
 
 ---
 
