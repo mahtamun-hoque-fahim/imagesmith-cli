@@ -84,7 +84,9 @@ Goal: production-ready for npm publish.
 
 - [x] npm publish — `@imagesmith/cli@0.1.0` live at https://www.npmjs.com/package/@imagesmith/cli
 - [x] package.json auto-corrected (bin key, repository URL normalized)
-- [ ] gh-meta: cut v0.1.0 GitHub release, fill About, add topics
+- [x] git tag v0.1.0 pushed
+- [x] GitHub release v0.1.0 created with full changelog
+- [x] Repo About: description, homepage (npmjs), topics set
 
 ---
 
